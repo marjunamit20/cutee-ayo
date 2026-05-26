@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QU EN</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    background:black;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.text-portrait{
+    width:100vw;
+    height:100vh;
+    font-family: monospace;
+    font-size: clamp(7px, 1vw, 12px);
+    line-height: clamp(7px, 1vw, 12px);
+    font-weight:bold;
+    text-align:justify;
+    word-break:break-word;
+    overflow:hidden;
+    color:transparent;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    -webkit-background-clip:text;
+    background-clip:text;
+    padding:5px;
+    transition:0.5s ease;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="text-portrait" id="portrait"></div>
+
+<script>
+
+const box = document.getElementById("portrait");
+
+let text = "cute ";
+
+box.innerHTML = text.repeat(50000);
+
+const images = [
+
+    "girl1.jpg",
+    "girl2.jpg",
+    "girl3.jpg",
+    "girl4.jpg",
+    "girl5.jpg",
+    "girl6.jpg",
+    "girl7.jpg",
+    "girl8.jpg",
+    "girl9.jpg",
+    "girl10.jpg",
+
+];
+
+let index = 0;
+
+box.style.backgroundImage = `url(${images[index]})`;
+
+setInterval(() => {
+
+    index++;
+
+    if(index >= images.length){
+        index = 0;
+    }
+
+    box.style.backgroundImage = `url(${images[index]})`;
+
+}, 3000);
+
+</script>
+
+</body>
+</html>
